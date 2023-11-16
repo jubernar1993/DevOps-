@@ -1,20 +1,38 @@
-####FROM HERE DOWN EVERYTHING IS TESTED AND IT WORKS
+!/bin/bash
+# //This configuration file is to install jenkins in amazon linux!!!
 
-# Get the aliases and functions
-if [ -f ~/.bashrc ]; then
-        . ~/.bashrc
-fi
+##Add the enviroment variables to the .bash_profile and #source .bash_profile once edited
 
-# User specific environment and startup programs
-
-
-JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.382.b05-1.amzn2.0.2.x86_64/jre"
-M2_HOME="/opt/maven"
-M2="/opt/maven/bin"
-PATH=$PATH:$HOME/.local/bin:$HOME/bin
+#///variable M2_HOME="/opt/maven" M2="/opt/maven/bin"      modify PATH=$PATH:$HOME/bin:$JAVA_HOME:$M2_HOME:$M2
 
 
 
-PATH=$PATH:$HOME/bin:$JAVA_HOME:$M2_HOME:$M2
 
-export PATH
+
+sudo -i
+sudo yum update –y
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+sudo yum upgrade
+sudo yum install java-17-amazon-corretto -y
+sudo yum install jenkins -y
+sudo systemctl enable jenkins
+sudo systemctl start jenkins
+
+wget https://dlcdn.apache.org/maven/maven-3/3.9.5/binaries/apache-maven-3.9.5-bin.tar.gz
+sudo tar -xf apache-maven-3.9.5-bin.tar.gz
+rm -rf apache-maven-3.9.5-bin.tar.gz
+mv apache-maven-3.9.5/ maven
+mv maven /opt/
+yum install httpd -y
+systemctl start httpd
+systemctl enable httpd 
+yum install git -y
+cd /home
+git clone https://github.com/jubernar1993/DevOps-.git
+cd DevOps-
+rm -rf /root/.bash_profile
+cp .bash_profile /root/
+source /root/.bash_profile
+rm -rf /home/DevOps-
+echo "<h1>SERVER IS UP AND RUNNING PLEASE GIVE JENKINS A FEW MINS TO BOOTUP</h1>" > /var/www/html/index.html
