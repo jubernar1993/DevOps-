@@ -12,3 +12,11 @@ mv sonar-scanner4y294924 sonar-scanner
 
 set-variable   $SONAR_RUNNER_HOME:/opt/sonar_scanner  in .bash_profile
 
+
+
+
+sonar .projectKey=
+sonar.organization=hermann90
+sonar.host.url=https://sonarcloud.io
+sonar.login=fd919376d610d8e6115f830a6579530cdelcdade
+sonar. sources=src sonar. java.binaries=.
