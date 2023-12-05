@@ -1,0 +1,14 @@
+#/// In this file we explain the steps to install sonarqube in amazon linux 2 and how to debug the installation 
+
+-step- /// Remember to install sonarqube pulgin 
+
+cd /opt
+
+$ wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
+
+$ unzip 
+
+mv sonar-scanner4y294924 sonar-scanner
+
+set-variable   $SONAR_RUNNER_HOME:/opt/sonar_scanner  in .bash_profile
+
