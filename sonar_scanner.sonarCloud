@@ -1,6 +1,6 @@
 #/// In this file we explain the steps to install sonarqube in amazon linux 2 and how to debug the installation 
 
--step- /// Remember to install sonarqube pulgin 
+-step- /// Remember to install sonarqube pulgin from Jenkins console 
 
 cd /opt
 
@@ -11,12 +11,17 @@ $ unzip
 mv sonar-scanner4y294924 sonar-scanner
 
 set-variable   $SONAR_RUNNER_HOME:/opt/sonar_scanner  in .bash_profile
+/// Set the login credentials 
+/// Set the sonarcloud server
+/// add the enviroment variables into the sonar-scanner
+                    
+                      ///ANALYSIS PROPERTIES///
 
-
-
-
-sonar .projectKey=
-sonar.organization=hermann90
-sonar.host.url=https://sonarcloud.io
-sonar.login=fd919376d610d8e6115f830a6579530cdelcdade
-sonar. sources=src sonar. java.binaries=.
+///##########################################################################  
+sonar.projectKey=jubernar1993_GEOLOCATION                              ///  #
+sonar.organization=jubernar1993                                       ///   #
+sonar.host.url=https://sonarcloud.io                                 ///    #
+sonar.login=d3af0d7b19c8ca9706907821e3d4a6310128ca3a                ///     # 
+sonar.sources=src                                                  ///      #
+sonar.java.binaries=.                                             ///       #
+///##########################################################################                                
